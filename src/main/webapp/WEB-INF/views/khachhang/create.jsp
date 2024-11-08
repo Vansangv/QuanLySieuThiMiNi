@@ -16,22 +16,34 @@
     <form action="/khachhang/create" method="post" class="mt-4">
         <div class="form-group">
             <label for="ma">Mã Khách Hàng:</label>
-            <input type="text" id="ma" name="ma" class="form-control" required />
+            <input type="text" id="ma" name="ma" class="form-control" value="${khachHang.ma}" required />
+            <c:if test="${not empty errors['ma']}">
+                <div class="text-danger">${errors['ma']}</div>
+            </c:if>
         </div>
 
         <div class="form-group">
             <label for="ten">Tên Khách Hàng:</label>
-            <input type="text" id="ten" name="ten" class="form-control" required />
+            <input type="text" id="ten" name="ten" class="form-control" value="${khachHang.ten}" required />
+            <c:if test="${not empty errors['ten']}">
+                <div class="text-danger">${errors['ten']}</div>
+            </c:if>
         </div>
 
         <div class="form-group">
             <label for="sdt">Số Điện Thoại:</label>
-            <input type="text" id="sdt" name="sdt" class="form-control" required />
+            <input type="text" id="sdt" name="sdt" class="form-control" value="${khachHang.sdt}" required />
+            <c:if test="${not empty errors['sdt']}">
+                <div class="text-danger">${errors['sdt']}</div>
+            </c:if>
         </div>
 
         <div class="form-group">
             <label for="diemTL">Điểm Tích Lũy:</label>
-            <input type="number" id="diemTL" name="diemTL" class="form-control" required />
+            <input type="number" id="diemTL" name="diemTL" class="form-control" value="${khachHang.diemTL}" required />
+            <c:if test="${not empty errors['diemTL']}">
+                <div class="text-danger">${errors['diemTL']}</div>
+            </c:if>
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu</button>
